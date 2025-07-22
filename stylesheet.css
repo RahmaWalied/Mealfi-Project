@@ -1,0 +1,777 @@
+:root {
+  --mainfont: "Amatic SC", serif;
+  --secfont: "Open Sans", serif;
+  --maincolorcolor: #cf1212;
+  --sectionpadding: 70px;
+  --backgroundcolor: #eeeeee;
+  --headcolor: #37373f;
+  --paragraphscoclor: #4f4f5a;
+  --surface: #ffffff;
+  --surface-alt: #f7f7f7;
+  --border-color: #e0e0e0;
+}
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: var(--secfont);
+  color: var(--paragraphscoclor);
+  background-color: #fff;
+  scroll-behavior: smooth;
+}
+img {
+  width: 100%;
+  display: block;
+}
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+a {
+  text-decoration: none;
+}
+.title {
+  text-align: center;
+  margin: 30px;
+}
+.title p {
+  color: var(--paragraphscoclor);
+  font-family: var(--secfont);
+}
+.title h1 {
+  font-family: var(--mainfont);
+  font-size: 50px;
+}
+.title span {
+  color: var(--maincolorcolor);
+}
+.navbar {
+  background-color: var(--surface);
+  padding: 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 99999;
+  box-shadow: 0 0 18px 0 var(--backgroundcolor);
+}
+.navbar .container {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.navbar .logo h1::after {
+  content: ".";
+  color: var(--maincolorcolor);
+}
+.navbar .item ul {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+}
+.navbar .item a {
+  font-family: var(--secfont);
+  color: var(--paragraphscoclor);
+  position: relative;
+}
+.navbar .item a::after {
+  content: "";
+  width: 0;
+  height: 2px;
+  position: absolute;
+  background-color: var(--maincolorcolor);
+  bottom: -5px;
+  left: 0;
+  transition: all 0.5s ease;
+}
+.navbar .item a:hover::after {
+  width: 100%;
+}
+.navbar .icon button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  line-height: 0;
+}
+.navbar .icon i {
+  font-size: 30px;
+  color: var(--maincolorcolor);
+}
+.home {
+  background-color: var(--backgroundcolor);
+  min-height: 100vh;
+  padding-top: 120px;
+}
+.home .container {
+  padding: 90px 0;
+  width: 90%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+.home .header {
+  width: 30%;
+  min-width: 280px;
+  margin-left: 20px;
+}
+.home .header h1 {
+  font-family: var(--mainfont);
+  font-size: 70px;
+  color: var(--headcolor);
+  margin: 0;
+}
+.home .header p {
+  color: var(--paragraphscoclor);
+}
+.header .icons {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 40px;
+  position: relative;
+}
+.home .header .icons p {
+  background-color: var(--maincolorcolor);
+  color: #fff;
+  text-align: center;
+  width: 120px;
+  margin: 20px 0;
+  padding: 10px;
+  border-radius: 0 30px 30px 30px;
+  font-family: var(--secfont);
+  font-size: 14px;
+  display: inline-block;
+}
+.home .header .icons span {
+  position: absolute;
+  left: 53%;
+  font-weight: 500;
+}
+.home .header .icons .inner:hover {
+  cursor: pointer;
+  color: var(--maincolorcolor);
+}
+.home .image {
+  width: 50%;
+  min-width: 300px;
+  text-align: center;
+}
+.home .image img {
+  width: 85%;
+  margin: 40px auto;
+  filter: drop-shadow(3px 3px 10px black);
+}
+.home .image img:hover {
+  animation: move 1s infinite;
+}
+@keyframes move {
+  0% {
+    transform: translate(1px, 1px) rotate(0deg);
+  }
+  10% {
+    transform: translate(-1px, -2px) rotate(-1deg);
+  }
+  20% {
+    transform: translate(-3px, 0) rotate(1deg);
+  }
+  30% {
+    transform: translate(3px, 2px) rotate(0deg);
+  }
+  40% {
+    transform: translate(1px, -1px) rotate(1deg);
+  }
+  50% {
+    transform: translate(-1px, 2px) rotate(-1deg);
+  }
+  60% {
+    transform: translate(-3px, 1px) rotate(0deg);
+  }
+  70% {
+    transform: translate(3px, 1px) rotate(-1deg);
+  }
+  80% {
+    transform: translate(-1px, -1px) rotate(1deg);
+  }
+  90% {
+    transform: translate(1px, 2px) rotate(0deg);
+  }
+  100% {
+    transform: translate(1px, -2px) rotate(-1deg);
+  }
+}
+.home .icons .circle {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  background-image: linear-gradient(
+    90deg,
+    var(--maincolorcolor) 0% 50%,
+    transparent 50% 100%
+  );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.home .icons .circle .inner {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.chefs {
+  padding: var(--sectionpadding);
+}
+.chefs .container {
+  width: 95%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+.chefs .card {
+  width: 33.3%;
+  min-width: 260px;
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  overflow: hidden;
+}
+.chefs .card:hover {
+  transform: scale(1.07);
+}
+.chefs .card span {
+  color: var(--paragraphscoclor);
+}
+.chefs .card p {
+  color: var(--paragraphscoclor);
+  font-style: italic;
+  font-family: var(--secfont);
+  font-size: 16px;
+}
+.chefs .card .inner img {
+  border-radius: 10px;
+}
+.chefs .card .sidebar .layer {
+  background-color: #ffffff4d;
+  border-radius: 5px;
+  padding: 10px;
+  position: relative;
+  right: -70px;
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+.chefs .card .inner:hover ul .layer {
+  right: 0;
+  opacity: 1;
+}
+.chefs .card .inner .layer i:hover {
+  color: #37373f;
+}
+.chefs .card .sidebar ul {
+  position: absolute;
+  top: 30px;
+  right: 10px;
+  color: #7f7f90;
+}
+.chefs .card .sidebar ul i {
+  font-size: 18px;
+  margin: 8px;
+  transition: all 0.5s ease;
+}
+.gallary {
+  background-color: var(--backgroundcolor);
+  padding: var(--sectionpadding);
+}
+.gallary .container {
+  max-width: 85%;
+  margin: 20px auto;
+}
+.gallary .gallarycontainer {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 15px;
+  height: 1165px;
+}
+.gallary .gallarycontainer .item {
+  width: calc((100% - 30px) / 3);
+  border: 4px #fff solid;
+  position: relative;
+  overflow: hidden;
+}
+.gallary .gallarycontainer .item .layer p {
+  color: #fff;
+}
+.gallary .gallarycontainer .item .layer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  top: 100%;
+  left: 0;
+  background-color: #00000096;
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  transition: all 0.5s ease;
+  opacity: 0;
+}
+.gallary .gallarycontainer .item:hover .layer {
+  top: 0;
+  opacity: 1;
+}
+.last {
+  padding: var(--sectionpadding);
+  width: 100%;
+  background-color: var(--surface);
+  color: var(--paragraphscoclor);
+}
+.last iframe {
+  width: 100%;
+  height: 320px;
+  border: 0;
+}
+.last .section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.last .cards {
+  width: 49.5%;
+  margin: 8px 0;
+  padding: 18px;
+  background-color: var(--backgroundcolor);
+}
+.last .cards .card1 {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--secfont);
+}
+.last .cards .card1 i {
+  font-size: 18px;
+  color: #fff;
+  background-color: var(--maincolorcolor);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  text-align: center;
+  padding: 15px;
+}
+.last .cards .card1 .out h2 {
+  color: var(--paragraphscoclor);
+}
+.last .cards .card1 .out span {
+  font-weight: 700;
+}
+.last .form {
+  margin: 20px 0;
+}
+.last .form form {
+  background-color: #fff;
+  padding: 18px;
+  box-shadow: 0 0 21px 0 var(--backgroundcolor);
+}
+.form .name {
+  display: flex;
+  justify-content: space-between;
+  gap: 1%;
+  flex-wrap: wrap;
+}
+.form .name input {
+  width: 49.5%;
+  padding: 15px;
+}
+.form input {
+  margin: 8px 0;
+  width: 100%;
+  padding: 15px;
+  border: 0.5px solid;
+}
+.form input:focus {
+  border: 0.5px solid var(--maincolorcolor);
+  outline: 1px solid var(--maincolorcolor);
+}
+.form textarea {
+  width: 100%;
+  height: 150px;
+  padding: 10px;
+  font-family: var(--secfont);
+  border: 0.5px solid;
+}
+.form textarea:focus {
+  border: 0.5px solid var(--maincolorcolor);
+  outline: 1px solid var(--maincolorcolor);
+}
+.form button {
+  background-color: var(--maincolorcolor);
+  border: none;
+  width: 180px;
+  padding: 14px;
+  margin-top: 25px;
+  font-size: 14px;
+  font-family: var(--secfont);
+  border-radius: 25px;
+  color: #fff;
+  margin-left: 40%;
+}
+.form button:hover {
+  cursor: pointer;
+  background-color: #e61414;
+}
+.footer {
+  background-image: url(textured-metal-background.jpg);
+  color: #fff;
+  box-shadow: 0 -1px 5px #0007;
+  background-size: contain;
+  padding: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+.footer .container1 {
+  width: 20%;
+  min-width: 250px;
+}
+.footer .container1 .about div {
+  margin: 5px;
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+.footer .about h3 {
+  text-align: center;
+  margin: 15px;
+  padding: 10px;
+  border-bottom: #4f4f5a 2px solid;
+}
+.footer .about img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+.footer .about h2 {
+  font-size: 25px;
+  font-weight: 700;
+  font-family: var(--secfont);
+}
+.footer .about h2::after {
+  content: ".";
+  color: var(--maincolorcolor);
+}
+.footer .about ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+}
+.footer .about ul li i {
+  text-align: center;
+  font-size: 30px;
+}
+.footer .about ul li i:hover {
+  cursor: pointer;
+}
+.footer .subscription {
+  width: 45%;
+  min-width: 300px;
+}
+.footer .subscription h3 {
+  margin: 10px 0;
+}
+.footer .subscription p {
+  color: #fff;
+  font-family: var(--secfont);
+  width: 90%;
+}
+.footer .subscription .box1 {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+.footer .subscription .box1 input {
+  width: 70%;
+  padding: 11px;
+}
+.footer .subscription .box1 button {
+  background-color: var(--maincolorcolor);
+  width: 20%;
+  min-width: 120px;
+  border: none;
+  padding: 10px;
+}
+.footer .subscription .box1 button:hover {
+  cursor: pointer;
+  background-color: #e61414;
+}
+.footer .subscription .box1 button p {
+  font-size: 15px;
+}
+.subscription .quick {
+  width: 60%;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.subscription .quick ul li {
+  margin: 8px;
+  position: relative;
+  padding-left: 20px;
+}
+.subscription .quick ul li i {
+  margin-right: 5px;
+}
+.subscription .quick ul li a {
+  color: #fff;
+  font-family: var(--secfont);
+}
+.footer .get {
+  width: 25%;
+  min-width: 260px;
+}
+.footer .get .icons {
+  padding: 10px;
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+.footer .get .icons .icon i {
+  color: var(--maincolorcolor);
+  font-size: 22px;
+  margin: 25px 0;
+  display: block;
+}
+.footer .get .icons p {
+  color: #fff;
+  margin-bottom: 12px;
+  padding: 5px;
+}
+body:has(.home:target) ul li a[href="#home"]::after {
+  width: 100%;
+}
+body:has(.chefs:target) ul li a[href="#chefs"]::after {
+  width: 100%;
+}
+body:has(.gallary:target) ul li a[href="#gallary"]::after {
+  width: 100%;
+}
+body:has(.last:target) ul li a[href="#last"]::after {
+  width: 100%;
+}
+
+/* ================= Dark Mode Overrides ================= */
+body.dark-mode {
+  --backgroundcolor: #1b1b1f;
+  --headcolor: #ffffff;
+  --paragraphscoclor: #d1d1d6;
+  --surface: #1f1f23;
+  --surface-alt: #2a2a2e;
+  --border-color: #2f2f33;
+  background-color: #0d0d0f;
+  color: var(--paragraphscoclor);
+}
+body.dark-mode .navbar {
+  background-color: var(--surface);
+  box-shadow: 0 0 18px 0 #000;
+}
+body.dark-mode .navbar .item a {
+  color: var(--paragraphscoclor);
+}
+body.dark-mode .navbar .item a::after {
+  background-color: var(--maincolorcolor);
+}
+body.dark-mode .home {
+  background-color: var(--surface-alt);
+}
+body.dark-mode .home .header h1 {
+  color: var(--headcolor);
+}
+body.dark-mode .home .header p {
+  color: var(--paragraphscoclor);
+}
+body.dark-mode .header .icons p {
+  color: #fff;
+}
+body.dark-mode .icons .circle .inner {
+  background-color: var(--surface);
+}
+body.dark-mode .chefs {
+  background-color: var(--surface);
+}
+body.dark-mode .chefs .card {
+  background-color: var(--surface-alt);
+  box-shadow: 0 0 10px #0006;
+}
+body.dark-mode .chefs .card span,
+body.dark-mode .chefs .card p {
+  color: var(--paragraphscoclor);
+}
+body.dark-mode .chefs .card .inner .layer i:hover {
+  color: var(--headcolor);
+}
+body.dark-mode .gallary {
+  background-color: var(--surface-alt);
+}
+body.dark-mode .gallary .gallarycontainer .item {
+  border: 4px var(--surface) solid;
+}
+body.dark-mode .gallary .gallarycontainer .item .layer {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+body.dark-mode .last {
+  background-color: var(--surface);
+}
+body.dark-mode .last .cards {
+  background-color: var(--surface-alt);
+}
+body.dark-mode .last .form form {
+  background-color: var(--surface-alt);
+  box-shadow: 0 0 21px 0 #000;
+}
+body.dark-mode .form input,
+body.dark-mode .form textarea {
+  background-color: var(--surface);
+  color: var(--paragraphscoclor);
+  border: 0.5px solid var(--border-color);
+}
+body.dark-mode .form input:focus,
+body.dark-mode .form textarea:focus {
+  border: 0.5px solid var(--maincolorcolor);
+  outline: 1px solid var(--maincolorcolor);
+}
+body.dark-mode .footer {
+  background-image: none;
+  background-color: #111;
+  color: #fff;
+  box-shadow: 0 -1px 5px #000;
+}
+body.dark-mode .footer .subscription p {
+  color: #fff;
+}
+body.dark-mode .footer .subscription .box1 input {
+  background-color: var(--surface-alt);
+  color: var(--paragraphscoclor);
+  border: 1px solid var(--border-color);
+}
+body.dark-mode .footer .subscription .box1 button {
+  background-color: var(--maincolorcolor);
+}
+body.dark-mode .footer .about p,
+body.dark-mode .footer .get .icons p {
+  color: #fff;
+}
+body.dark-mode .footer .about h3 {
+  border-bottom: var(--paragraphscoclor) 2px solid;
+}
+
+/* ================= Responsive ================= */
+@media (max-width: 992px) {
+  .navbar .container {
+    width: 90%;
+  }
+  .home .header {
+    width: 100%;
+    margin-left: 0;
+    text-align: center;
+  }
+  .home .image {
+    width: 100%;
+  }
+  .home .header h1 {
+    font-size: 48px;
+  }
+  .chefs .card {
+    width: 48%;
+  }
+  .gallary .gallarycontainer {
+    height: auto;
+    flex-direction: row;
+  }
+  .gallary .gallarycontainer .item {
+    width: calc(50% - 10px);
+  }
+  .last .cards {
+    width: 100%;
+  }
+  .form .name input {
+    width: 100%;
+  }
+  .form button {
+    margin-left: 0;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .footer {
+    flex-direction: column;
+    align-items: center;
+  }
+  .footer .container1,
+  .footer .subscription,
+  .footer .get {
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+  }
+}
+@media (max-width: 600px) {
+  .navbar .container {
+    width: 95%;
+  }
+  .home .header h1 {
+    font-size: 36px;
+  }
+  .header .icons {
+    gap: 20px;
+  }
+  .home .header .icons span {
+    position: static;
+    margin-left: 8px;
+  }
+  .home .icons {
+    flex-wrap: wrap;
+  }
+  .chefs .card {
+    width: 100%;
+  }
+  .gallary .gallarycontainer {
+    flex-direction: column;
+    height: auto;
+  }
+  .gallary .gallarycontainer .item {
+    width: 100%;
+  }
+  .footer .subscription .box1 {
+    flex-direction: column;
+  }
+  .footer .subscription .box1 input,
+  .footer .subscription .box1 button {
+    width: 100%;
+  }
+  .subscription .quick {
+    width: 100%;
+  }
+  .form button {
+    width: 100%;
+  }
+}
