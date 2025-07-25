@@ -685,9 +685,139 @@ body.dark-mode .footer .about h3 {
 }
 
 /* ================= Responsive ================= */
+/* ------------------------------ Root Variables ------------------------------ */
+:root {
+  --mainfont: "Amatic SC", serif;
+  --secfont: "Open Sans", serif;
+  --maincolorcolor: #cf1212;
+  --sectionpadding: 70px;
+  --backgroundcolor: #eeeeee;
+  --headcolor: #37373f;
+  --paragraphscoclor: #4f4f5a;
+  --surface: #ffffff;
+  --surface-alt: #f7f7f7;
+  --border-color: #e0e0e0;
+}
+
+/* ------------------------------ Base Reset ------------------------------ */
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: var(--secfont);
+  color: var(--paragraphscoclor);
+  background-color: #fff;
+  scroll-behavior: smooth;
+}
+img {
+  width: 100%;
+  display: block;
+}
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+a {
+  text-decoration: none;
+}
+
+/* ------------------------------ Typography ------------------------------ */
+.title {
+  text-align: center;
+  margin: 30px;
+}
+.title p {
+  color: var(--paragraphscoclor);
+  font-family: var(--secfont);
+}
+.title h1 {
+  font-family: var(--mainfont);
+  font-size: 50px;
+}
+.title span {
+  color: var(--maincolorcolor);
+}
+
+/* ------------------------------ Navbar ------------------------------ */
+.navbar {
+  background-color: var(--surface);
+  padding: 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 99999;
+  box-shadow: 0 0 18px 0 var(--backgroundcolor);
+}
+.navbar .container {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.navbar .logo h1::after {
+  content: ".";
+  color: var(--maincolorcolor);
+}
+.navbar .item ul {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+}
+.navbar .item a {
+  font-family: var(--secfont);
+  color: var(--paragraphscoclor);
+  position: relative;
+}
+.navbar .item a::after {
+  content: "";
+  width: 0;
+  height: 2px;
+  position: absolute;
+  background-color: var(--maincolorcolor);
+  bottom: -5px;
+  left: 0;
+  transition: all 0.5s ease;
+}
+.navbar .item a:hover::after {
+  width: 100%;
+}
+.navbar .icon button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  line-height: 0;
+}
+.navbar .icon i {
+  font-size: 30px;
+  color: var(--maincolorcolor);
+}
+
+/* ------------------------------ Responsive ------------------------------ */
 @media (max-width: 992px) {
   .navbar .container {
     width: 90%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .navbar .item ul {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+    background-color: var(--surface);
+    width: 100%;
+    padding: 10px;
+  }
+  .navbar .item.active ul {
+    display: flex;
+  }
+  .navbar .icon button {
+    display: block;
   }
   .home .header {
     width: 100%;
@@ -733,10 +863,27 @@ body.dark-mode .footer .about h3 {
     max-width: 600px;
     text-align: center;
   }
+  .footer .subscription .box1 {
+    flex-direction: column;
+  }
+  .footer .subscription .box1 input,
+  .footer .subscription .box1 button {
+    width: 100%;
+  }
+  .subscription .quick {
+    width: 100%;
+  }
 }
+
 @media (max-width: 600px) {
   .navbar .container {
     width: 95%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .navbar .icon {
+    margin-left: auto;
   }
   .home .header h1 {
     font-size: 36px;
